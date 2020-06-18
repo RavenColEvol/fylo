@@ -1,0 +1,241 @@
+@import url('https://fonts.google.com/specimen/Raleway');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+:root {
+    --pale-blue: hsl(243, 100%, 93%);
+    --grayish-blue: hsl(229, 7%, 55%);
+    --dark-blue: hsl(228, 56%, 26%);
+    --darkest-blue: hsl(229, 57%, 11%);
+    --white: #fff;
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    background: var(--darkest-blue);
+    color: var(--white);
+    font-weight: 400;
+    height: 100%;
+}
+
+.curve {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: url('./images/bg-desktop.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+    z-index: 1;
+}
+
+a {
+    text-decoration: none;
+}
+
+.attribution {
+    position: absolute;
+    bottom: 3rem;
+    width: 100%;
+    text-align: center;
+    font-size: 1.4rem;
+    z-index: 5;
+}
+
+.attribution a {
+    color: white;
+    font-weight: 700;
+    text-decoration-line: underline;
+    text-decoration-style: wavy;
+    text-decoration-color: var(--pale-blue);
+}
+
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    z-index: 5;
+    align-items: flex-end;
+}
+
+.card {
+    background: var(--dark-blue);
+    padding: 3rem;
+    border-radius: .8rem;
+    box-shadow: 0 2rem 4rem var(--darkest-blue);
+}
+
+.logo {
+    width: 10rem;
+    height: auto;
+}
+
+.fylo {
+    width: 27rem;
+    border-top-right-radius: 8rem;
+    margin-right: 3rem;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+.fylo ul {
+    margin-top: 2rem;
+    list-style: none;
+}
+
+.fylo ul li {
+    display: inline-block;
+    background: var(--darkest-blue);
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 0.5rem;
+    position: relative;
+    margin-right: 1rem;
+    cursor: pointer;
+    transition: 0.15s all cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+
+.fylo ul li:hover {
+    filter: brightness(150%);
+}
+
+.icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 2rem;
+}
+
+.usage {
+    color: var(--pale-blue);
+    width: 35rem;
+    font-size: 1.2rem;
+    position: relative;
+}
+
+.progress {
+    background: var(--darkest-blue);
+    width: 100%;
+    height: 1.2rem;
+    border-radius: 100px;
+    margin-top: 0.8rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.progress::after {
+    content: '';
+    width: 70%;
+    height: .75rem;
+    position: absolute;
+    top: 50%;
+    left: 0.9%;
+    transform: translateY(-50%);
+    background: linear-gradient(to right, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+    border-radius: 100px;
+}
+
+.message {
+    position: absolute;
+    bottom: 80%;
+    right: 3rem;
+    background: white;
+    border-radius: 1.3rem;
+    padding: 1rem 1.5rem;
+    color: var(--darkest-blue);
+    font-size: 3rem;
+    font-weight: 700;
+    font-family: consolas;
+    display: flex;
+    align-items: center;
+}
+
+.message::after {
+    content: '';
+    width: 2rem;
+    height: 2.5rem;
+    background: white;
+    position: absolute;
+    top: 80%;
+    right: 0;
+    clip-path: polygon(0 0, 100% 0, 100% 100%);
+}
+
+.message span {
+    color: var(--grayish-blue);
+    text-transform: uppercase;
+    font-size: 1rem;
+    margin-left: 1rem
+}
+
+.limit {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: var(--pale-blue);
+    margin-top: 0.5rem;
+}
+
+.bold {
+    font-weight: 800;
+}
+
+
+/* Mobile View */
+
+@media (max-width: 37.5rem) {
+
+    html {
+        font-size: 50%;
+    }
+
+    .curve {
+        height: 100%;
+        background: url('./images/bg-mobile.svg');
+    }
+
+    .content {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .fylo {
+        margin-right: 0;
+        margin-bottom: 2rem;
+    }
+
+    .card {
+        width: 40rem;
+    }
+
+    .usage {
+        font-size: 1.3rem;
+    }
+
+    .message {
+        top: 100%;
+        left: 50%;
+        transform: translate(-50%,-50%) ;
+    }
+
+    .message::after {
+        display: none;
+    }
+
+}
