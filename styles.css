@@ -25,6 +25,7 @@ body {
     color: var(--white);
     font-weight: 400;
     height: 100%;
+    overflow-x: hidden;
 }
 
 .curve {
@@ -232,6 +233,8 @@ a {
         top: 100%;
         left: 50%;
         transform: translate(-50%,-50%) ;
+        padding:2rem;
+        justify-content: center;
     }
 
     .message::after {
